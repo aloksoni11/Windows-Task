@@ -24,23 +24,27 @@
             overflow: hidden;
             margin: 0;
             padding: 0;
+            box-shadow: 0px 1px 6px 2px #a98e5dab;
         }
     </style>
 </head>
 
 <body>
-    <div class="main" onclick="showCoords(event)">
+    <div class="main" onmousemove="showCoords(event)">
         <p id="demo"></p>
     </div>
     <script>
         function showCoords(event) {
             var x = event.clientX;
             var y = event.clientY;
-            console.log(x, y);
             var z = document.getElementById("demo");
             z.style.height = y + "px";
             z.style.width = x + "px";
+            var myColor = ["orange", "blue", "red", "green", "purple"];
+            var num = parseInt(Math.random() * (myColor.length - 1));
+            z.style.backgroundColor = myColor[num];
         }
+        //        window.setInterval(showCoords, 5000);
     </script>
 </body>
 
