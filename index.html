@@ -13,30 +13,34 @@
             width: 100%;
             margin: 0;
         }
-
+        
         .main {
-            /*
             height: 100%;
             width: 100%;
-*/
-            background-color: orange;
+        }
+        
+        #demo {
+            background-color: pink;
+            overflow: hidden;
             margin: 0;
             padding: 0;
         }
-
     </style>
 </head>
 
 <body>
-    <div class="main">
-        dkjkds
+    <div class="main" onclick="showCoords(event)">
+        <p id="demo"></p>
     </div>
     <script>
-        function resizediv() {
-
+        function showCoords(event) {
+            var x = event.clientX;
+            var y = event.clientY;
+            console.log(x, y);
+            var z = document.getElementById("demo");
+            z.style.height = y + "px";
+            z.style.width = x + "px";
         }
-        window.setInterval(resizediv, 5000);
-
     </script>
 </body>
 
